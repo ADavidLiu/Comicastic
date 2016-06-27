@@ -1,0 +1,417 @@
+/* TABLE OF CONTENTS */
+
+
+/*
+    1. GENERAL STYLES
+    2. HEADER
+    3. NAVIGATION
+    4. BANNER
+    5. CONTENT
+    6. FOOTER
+    7. MEDIA QUERIES
+*/
+
+
+/* 1. GENERAL STYLES */
+
+@font-face {
+    font-family: KomikaTitle;
+    src: url("fonts/KomikaTitle.ttf");
+}
+
+@font-face {
+    font-family: KomikaTextTight;
+    src: url("fonts/KomikaTextTight.ttf");
+}
+
+body {
+    background-color: black;
+    background-image: url("images/main-bg.jpg");
+    background-position: center 30px;
+    background-repeat: no-repeat;
+    background-size: 150% 451px;
+    padding: 54px 15px 77px 15px;
+    overflow-x: hidden;
+}
+
+::selection {
+    background-color: #920000;
+    color: white;
+}
+
+img {
+    -webkit-user-drag: none;
+    -o-user-drag: none;
+    -moz-user-drag: none;
+    user-drag: none;
+}
+
+.container {
+    max-width: 940px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+
+/* 2. HEADER */
+
+header {
+    padding: 0 !important;
+    .social-media {
+        padding: 2px 15px 2px 0 !important;
+        margin-bottom: 15px;
+        text-align: right;
+        h5 {
+            color: #ffffff;
+            font: 400 12px / 18px 'Comic Sans MS';
+            display: inline;
+        }
+        ul {
+            margin: 0;
+            li:not(:first-child) {
+                padding-right: 0;
+                padding-left: 3px;
+            }
+        }
+        background-image: url("images/social-bg.png");
+        background-repeat: no-repeat;
+        background-size: 361px 100%;
+        background-position: right center;
+    }
+}
+
+
+/* 3. NAVIGATION */
+
+.navigation-wrapper {
+    position: absolute;
+    z-index: 3;
+    top: -41px;
+    bottom: auto;
+    left: auto;
+    right: 0;
+}
+
+.navigation {
+    padding: 0 !important;
+    li a:link,
+    li a:visited,
+    li a:hover,
+    li a:active {
+        text-decoration: none;
+        color: #ffffff;
+        font: 400 18px 'Comic Sans MS';
+        background-color: transparent;
+        padding: 15px 30px;
+        text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.25);
+    }
+    button {
+        span {
+            background-color: #f2ad00;
+        }
+    }
+    .nav-active {
+        background-image: none;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+    #menu {
+        background-color: #f2ad00;
+        border-radius: 4px;
+        box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.5);
+        margin-right: 15px;
+    }
+}
+
+
+/* 4. BANNER */
+
+.banner {
+    background-image: url("images/banner-bg.png");
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: 100% 100%;
+    padding: 10px 120px -10px 240px !important;
+    height: 25.5vw;
+    position: relative;
+    z-index: 2;
+    #featured-news {
+        width: 70%;
+        position: absolute;
+        left: 40%;
+        transform: translateX(-40%);
+    }
+    .carousel-inner {
+        img {
+            margin: 10px auto 0 auto;
+            box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.5);
+        }
+    }
+    .carousel-caption {
+        display: none;
+        visibility: hidden;
+        opacity: 0;
+        max-width: 299px;
+        background: url(images/Bubble.png);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-position: center;
+        padding: 0 21px 60px 21px;
+        text-align: right;
+        position: absolute;
+        float: right;
+        top: -15px;
+        bottom: auto;
+        right: -180px;
+        left: auto;
+        transform: scale(0.8);
+        h3 {
+            padding-right: 20px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            color: #680000;
+            font: 400 18px KomikaTitle;
+            text-shadow: none;
+            background: url("images/Bubble-Title.png");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-position: center;
+        }
+        p {
+            padding-right: 20px;
+            color: #1b1b1b;
+            font: 400 16px KomikaTextTight;
+            text-shadow: none;
+            &.posted {
+                color: #969696;
+                font: 400 10px Tahoma;
+            }
+        }
+        img {
+            width: 100%;
+            padding-right: 20px;
+        }
+    }
+    .carousel-control {
+        opacity: 1;
+        background-image: none;
+        height: 18px;
+        &.left {
+            bottom: 28px;
+            top: auto;
+            left: -8vw;
+            right: auto;
+        }
+        &.right {
+            bottom: 28px;
+            top: auto;
+            left: auto;
+            right: -7vw;
+        }
+    }
+}
+
+
+/* 5. CONTENT */
+
+.content {
+    background-color: white;
+    border-radius: 4px;
+    padding: 20px 18px;
+    margin-top: 20px;
+    position: relative;
+    &:after {
+        content: "";
+        position: absolute;
+        width: 47px;
+        height: 34px;
+        top: auto;
+        bottom: 0;
+        left: auto;
+        right: 0;
+        background-image: url("images/page-curl.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: left top;
+    }
+    div {
+        padding: 0;
+    }
+    article {
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-bottom: 35px;
+        h3 {
+            color: #ffffff;
+            font: 400 16px 'Comic Sans MS';
+            background-color: #920000;
+            padding: 8px 10px;
+            margin-bottom: 8px;
+        }
+        p {
+            color: #ffffff;
+            font: 400 12px / 16px 'Comic Sans MS';
+            background-image: url(images/article-text-bg.png);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-position: left top;
+            padding: 12px 12px 25px 12px;
+        }
+        a {
+            background-image: url(images/btn-readmore.png);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-position: center;
+            padding: 8px 16px 10px 16px;
+            &:link,
+            &:visited,
+            &:hover,
+            &:active {
+                color: #680000;
+                font: 400 12px / 16px 'Comic Sans MS';
+                text-decoration: none;
+            }
+        }
+    }
+    .article-img-wrapper {
+        padding-right: 0;
+        img {
+            width: 100%;
+        }
+    }
+}
+
+
+/* 6. FOOTER */
+
+footer {
+    padding: 0 !important;
+    margin-top: 28px;
+    position: relative;
+    &:before {
+        content: "";
+        position: absolute;
+        top: -28px;
+        bottom: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        height: 116px;
+        background-image: url("images/footer-bg.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-position: center top;
+    }
+    li,
+    a:link,
+    a:visited,
+    a:hover,
+    a:active {
+        color: #515151;
+        font: 400 10px / 18px Arial;
+        text-decoration: none;
+        &.yellow {
+            color: #f2aa00;
+        }
+    }
+}
+
+
+/* 7. MEDIA QUERIES */
+
+@media screen and (max-width: 480px) {
+    .banner {
+        .carousel-control {
+            &.right {
+                right: 18px !important;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .banner {
+        .carousel-control {
+            &.right {
+                right: 0;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        background-size: 100% 451px;
+    }
+    header {
+        padding-left: 70px !important;
+        .social-media {
+            margin-bottom: 0;
+        }
+    }
+    .navigation-wrapper {
+        z-index: 0;
+    }
+    .navigation {
+        .nav-active {
+            background-image: url("images/nav-active-bg.png");
+        }
+        #menu {
+            background-color: transparent;
+            border-radius: 0;
+            box-shadow: none;
+            margin-right: 0;
+        }
+    }
+    .banner {
+        height: 211px;
+        .carousel-caption {
+            display: block;
+            visibility: visible;
+            opacity: 1;
+        }
+        .carousel-control {
+            height: 18px;
+            &.left {
+                left: -8vw;
+            }
+            &.right {
+                right: -80px;
+            }
+        }
+    }
+    .content {
+        .article-img-wrapper {
+            padding-right: 15px;
+        }
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .banner {
+        height: 251px;
+        .carousel-caption {
+            transform: scale(1) translateY(30px);
+        }
+        .carousel-control {
+            height: 18px;
+            &.left {
+                bottom: 28px;
+                left: -95px;
+            }
+            &.right {
+                bottom: 28px;
+                right: -110px;
+            }
+        }
+    }
+}
